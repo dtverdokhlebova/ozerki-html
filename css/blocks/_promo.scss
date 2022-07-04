@@ -1,0 +1,102 @@
+.promo {
+  position: relative;
+  border-radius: 9px;
+  overflow: hidden;
+  @include media-tablet {
+    margin: 0 -15px;
+    border-radius: 0;
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 520px;
+    padding: 60px 150px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    @include media-laptop {
+      min-height: 380px;
+      padding: 45px;
+    }
+    @include media-tablet {
+      min-height: 225px;
+      padding: 30px 15px 35px;
+    }
+  }
+  &__h1 {
+    max-width: 450px;
+    margin-bottom: 15px;
+    font: 500 43px/1.2 $font;
+    text-transform: uppercase;
+    @include media-laptop {
+      font-size: 30px;
+    }
+    @include media-tablet {
+      max-width: 210px;
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+  }
+  &__descr {
+    max-width: 300px;
+    margin-bottom: 15px;
+    font: 500 15px/1.2 $font;
+    text-transform: uppercase;
+    @include media-tablet {
+      margin-bottom: 5px;
+      font-size: 12px;
+      text-transform: none;
+    }
+  }
+  &__price {
+    font-weight: 700;
+    font-size: 24px;
+    @include media-tablet {
+      font-size: 20px;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 55px;
+      left: 50px;
+      width: 465px;
+      height: 270px;
+      background: #000;
+      border-radius: 240px;      
+      -webkit-filter: blur(180px);
+      -moz-filter: blur(180px);
+      -o-filter: blur(180px);
+      -ms-filter: blur(180px);
+      filter: blur(180px);
+      @include media-laptop {
+        left: 0;
+        width: 70%;
+        height: 80%;
+      }
+      @include media-tablet {
+        width: 50%;
+        height: 220%;
+        top: -50%;
+        -webkit-filter: blur(135px);
+        -moz-filter: blur(135px);
+        -o-filter: blur(135px);
+        -ms-filter: blur(135px);
+        filter: blur(135px);
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

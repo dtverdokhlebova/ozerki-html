@@ -1,0 +1,161 @@
+.flat {
+  &__ui-h2 {
+    margin-bottom: 40px;
+    @include media-tablet {
+      margin-bottom: 15px;
+      font-size: 21px;
+    }
+  }
+  &-sort {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    color: $blue;
+    @include media-tablet {
+      margin-bottom: 40px;
+    }
+    &__title {
+      margin-right: 25px;
+      font: 500 19px/1.1 $font;
+      @include media-tablet {
+        margin-right: 10px;
+        font-size: 14px;
+      }
+    }
+    &__wrapper {
+      display: flex;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-right: 20px;
+        @include media-tablet {
+          margin-right: 15px;
+        }
+      }
+      input {
+        display: none;
+        &:checked + label {
+          background: $blue;
+          color: #fff;
+        }
+      }
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        font: 500 19px/1.2 $font;
+        color: $blue;
+        background: #fff;
+        border-radius: 50%;
+        transition: 0.3s;
+        cursor: pointer;
+        @include media-tablet {
+          width: 40px;
+          height: 40px;
+          font-size: 15px;
+        }
+        &:hover {
+          @media (min-width: 1025px) {  
+            box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1090px;
+    margin: 0 auto;
+    @include media-custom(1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 700px;
+    }
+    @include media-custom(580px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &-item {
+    background: #fff;
+    padding: 5px 0 25px;
+    border-radius: 9px;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    @include media-tablet {
+      padding: 10px 0 15px;
+    }
+    &__img {
+      position: relative;
+      max-width: 289px;
+      margin: 0 auto 15px;
+      padding-top: 74.3%;
+      @include media-tablet {
+        max-width: unset;
+        margin: 0 10px 25px;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__content {
+      padding: 0 30px;
+      @include media-tablet {
+        padding: 0 15px;
+      }
+    }
+    &__table {
+      margin-bottom: 25px;
+      @include media-tablet {
+        margin-bottom: 20px;
+      }
+    }
+    &__tr {
+      display: flex;
+      justify-content: space-between;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+        @include media-tablet {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &__prop {
+      margin-right: 15px;
+      font: 15px/1.2 $font;
+      color: $blue;
+      color: #0c223f;
+    }
+    &__val {
+      font: 18px/1.2 $font;
+      @include media-tablet {
+        font-size: 16px;
+      }
+    }
+    &__ui-button {
+      width: 100%;
+      margin: 0 auto 20px;
+      font-size: 19px;
+      @include media-tablet {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+    }
+    &__footnote {
+      font: 300 15px/1.2 $font;
+      text-align: center;
+      color: #4e4e4e;
+      @include media-tablet {
+        font-size: 14px;
+      }
+    }
+  }
+}
